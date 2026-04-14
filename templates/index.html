@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Resume Analyzer</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Smart Resume Analyzer</h1>
+    <p>Upload a PDF/DOCX resume and compare it against a job description.</p>
+
+    <form id="analyzeForm">
+      <label for="resume">Resume (PDF or DOCX)</label>
+      <input type="file" id="resume" name="resume" accept=".pdf,.docx" required>
+
+      <label for="job_description">Job Description</label>
+      <textarea id="job_description" name="job_description" rows="8" placeholder="Paste the target job description..."></textarea>
+
+      <button type="submit">Analyze Resume</button>
+    </form>
+
+    <section id="results" class="hidden">
+      <h2>Analysis Results</h2>
+      <p><strong>Resume Score:</strong> <span id="score"></span>/100</p>
+
+      <h3>Extracted Skills</h3>
+      <ul id="skills"></ul>
+
+      <h3>Missing Keywords</h3>
+      <ul id="missing_keywords"></ul>
+
+      <h3>Suggestions</h3>
+      <ul id="suggestions"></ul>
+    </section>
+
+    <p id="error" class="error"></p>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
